@@ -40,3 +40,7 @@ quality and device tests before automatically rejecting user content.
 The initial hosted CI run was cancelled by GitHub's scheduled macOS 14 runner
 retirement brownout (2026-11-02), before code execution. The main-branch workflow
 now uses macos-15. Local and clean-clone results above are independent of hosted CI.
+
+Older Swift type-inference ambiguity in two array expressions was resolved with
+explicit element types and intermediate arrays. Concatenation, normalization and
+Float/Double conversion order remain unchanged; no parameter bytes changed.

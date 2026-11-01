@@ -507,7 +507,10 @@ final class ImageSafetyCommentPhotoContentGuard: @unchecked Sendable {
     let meanNorm = sqrt(mean.reduce(0) {$0+$1*$1})
     guard meanNorm.isFinite, meanNorm>0 else { throw Failure.invalidOutput }
     let deviation = (0..<384).map {sqrt(max(0,squares[$0]-mean[$0]*mean[$0]))}
-    let pooling = (rawDescriptor.map {$0/descriptorNorm}+mean.map {$0/meanNorm}+deviation).map(Float.init)
+    let normalizedDescriptor: [Double] = rawDescriptor.map { $0 / descriptorNorm }
+    let normalizedMean: [Double] = mean.map { $0 / meanNorm }
+    let joined: [Double] = normalizedDescriptor + normalizedMean + deviation
+    let pooling: [Float] = joined.map { Float($0) }
     guard pooling.allSatisfy({$0.isFinite}), patches.allSatisfy({$0.isFinite}) else { throw Failure.invalidOutput }
     trace?.record("performance", "dinoFeatureProcessingEnd")
     return Features(pooling:pooling,patches:patches)

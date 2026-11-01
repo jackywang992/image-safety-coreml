@@ -17,7 +17,9 @@ struct ImageSafetyBloodContextResiduals {
  func recallProbability(whole:[Float],center:[Float])throws->Float {try recallEvidence(whole:whole,center:center).gated}
  func recallEvidence(whole:[Float],center:[Float])throws->(gated:Float,raw:Float) {
   guard whole.count>=384,center.count>=384 else {throw Failure.invalidFeatures}
-  var x=(Array(whole.prefix(384))+Array(center.prefix(384))).map(Double.init)
+  let wholeCLS: [Float] = Array(whole[0..<384])
+  let centerCLS: [Float] = Array(center[0..<384])
+  var x: [Double] = (wholeCLS + centerCLS).map { Double($0) }
   let norm=sqrt(x.reduce(0){$0+$1*$1});guard norm.isFinite,norm>0 else {throw Failure.invalidFeatures}
   for j in 0..<768{x[j]/=norm}
   var target = -Double.infinity,counterexample = -Double.infinity,value=0.0
@@ -32,7 +34,9 @@ struct ImageSafetyBloodContextResiduals {
  }
  func correction(whole:[Float],center:[Float])throws->(gore:Float,xs:Float) {
   guard whole.count>=384,center.count>=384 else {throw Failure.invalidFeatures}
-  var x=(Array(whole.prefix(384))+Array(center.prefix(384))).map(Double.init);let norm=sqrt(x.reduce(0){$0+$1*$1});guard norm.isFinite,norm>0 else {throw Failure.invalidFeatures};for j in 0..<768{x[j]/=norm}
+  let wholeCLS: [Float] = Array(whole[0..<384])
+  let centerCLS: [Float] = Array(center[0..<384])
+  var x: [Double] = (wholeCLS + centerCLS).map { Double($0) };let norm=sqrt(x.reduce(0){$0+$1*$1});guard norm.isFinite,norm>0 else {throw Failure.invalidFeatures};for j in 0..<768{x[j]/=norm}
   var normal = -Double.infinity,unsafe = -Double.infinity,value=0.0,xsValue=0.0
   for i in 0..<n {var dot=0.0;for j in 0..<768{dot+=x[j]*Double(support[i*768+j])};if risk[i]{unsafe=max(unsafe,dot)}else{normal=max(normal,dot)};let k=exp(-gamma*max(0,2-2*dot));value+=k*Double(coefficient[i]);xsValue+=k*Double(xsCoefficient[i])}
   guard value.isFinite,xsValue.isFinite else {throw Failure.invalidFeatures};if normal<minNormal || normal<unsafe+margin{return (0,0)};let result=Float(max(0,value)),xsResult=Float(max(0,xsValue));guard result.isFinite,xsResult.isFinite else {throw Failure.invalidFeatures};return (result,xsResult)
