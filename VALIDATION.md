@@ -5,6 +5,8 @@ Validated on 2026-11-02, Apple Silicon macOS, Apple Swift 6.4.2, CPU Core ML/Vis
 | Check | Result |
 |---|---|
 | Independent Swift package release build | Passed |
+| Fresh anonymous public GitHub clone → public model download → model compile → CLI normal-photo smoke test | Passed |
+| Full model Release anonymous download and SHA256 | Verified |
 | Independent Core ML compilation of all three released `.mlpackage` models | Passed |
 | Standalone Swift unit tests | 4 passed, 0 failed |
 | Content-path historical image replay against the original implementation | 681/681 identical sensitive-content verdicts |
@@ -34,3 +36,7 @@ The Swift library targets iOS 17+ / macOS 14+. This export was replayed through 
 macOS CLI; it is not a fresh iPhone device, thermal, memory or energy validation of
 this standalone Swift package. Consumers should run their own domain-specific
 quality and device tests before automatically rejecting user content.
+
+The initial hosted CI run was cancelled by GitHub's scheduled macOS 14 runner
+retirement brownout (2026-11-02), before code execution. The main-branch workflow
+now uses macos-15. Local and clean-clone results above are independent of hosted CI.
