@@ -1,0 +1,50 @@
+{
+  "licenses": {
+    "SafetyXS": "MIT (SwiftFormer backbone Apache-2.0)",
+    "TinyCLIP": "MIT",
+    "dinov2": "Apache-2.0",
+    "originalCodeAndLearnedParameters": "MIT"
+  },
+  "models": [
+    "ImageSafetySafetyXS-FP32.mlpackage",
+    "ImageSafetyTinyCLIPVision-FP32.mlpackage",
+    "ImageSafetyDINODescriptor.mlpackage"
+  ],
+  "parameters": {
+    "packedBytes": 61995307,
+    "rawBytes": 121980911,
+    "sharedRows": 4569,
+    "thresholdSignedMargin": 0.1
+  },
+  "schema": 1,
+  "sha256": {
+    "ImageSafetyBloodContextResiduals.bin": "3ae25aeace5faf1e31f8895727061bbbda813a5fcc1fc0b78030cb931c5f13da",
+    "ImageSafetyBloodSemantic.bin": "d095a1f72eebeb36f7c767d2fdafe9f61ad94495935a10fd098548804e68531d",
+    "ImageSafetyDINODescriptor.mlpackage/Data/com.apple.CoreML/model.mlmodel": "fc8d65551b50c0a0716bbaea77d33bac3877acc3ffe6a61da963caa571b88e1f",
+    "ImageSafetyDINODescriptor.mlpackage/Data/com.apple.CoreML/weights/weight.bin": "b2eecc5a5480659aa5ab5471b6a3c5530c320249831cbd8ce3ea763583c32dac",
+    "ImageSafetyDINODescriptor.mlpackage/Manifest.json": "19e90f999803613684b915242666cb7b37fd70af3a062d6b505b727f05e1dce2",
+    "ImageSafetyGoreCompactContext.bin": "aa9677338cdb1355197dc808264d2858affb1543124d37aeec0e3fffed997a11",
+    "ImageSafetyNACRiskHead.bin": "7539844435480b022c8e6f4a3814bf61eb38f0861c9f1a47a7677d6c47f64817",
+    "ImageSafetyNewRecallContext.bin": "82a0a2d27e514db78d7a6aada60e56bdb294e720f9eeb53b2a04da73af94a985",
+    "ImageSafetyNormalContext.bin": "ea354ae6c431337564c7a70208603a8d4347290ee4734fe60e35de0738ce616a",
+    "ImageSafetyRecall12Context.bin": "8a24459e3d13d4ca97a46308923d514266799b3b8670d23161d291575871f9cf",
+    "ImageSafetyRecallContext.bin": "80a4b4a81511fe237c5d2e6d485334872698f523f15a2504664a084ff1015503",
+    "ImageSafetyReviewedNormalContext.bin": "481403c3cd12eb8ecbab5e141dce59681d4b029157d205a56e92997bd3511f32",
+    "ImageSafetySafetyXS-FP32.mlpackage/Data/com.apple.CoreML/model.mlmodel": "a103f9fcadacc9855b765ef06f8f0b42528ffea565626d2ae76da046a4a1ae0b",
+    "ImageSafetySafetyXS-FP32.mlpackage/Data/com.apple.CoreML/weights/weight.bin": "e6dba18284ba1a91e84e70e4699565cc1faacdb763f1011da7125d327c266115",
+    "ImageSafetySafetyXS-FP32.mlpackage/Manifest.json": "86c5c4afa4a03ff1cc025d58e1bcb0563ab077011a8858126a623ef3d972700f",
+    "ImageSafetySemanticRiskHead.bin": "03c0618575ac3255507acf5c67fd968986869b49455a0a14c02692b24d1df4a7",
+    "ImageSafetySensitivePhotoHead.bin": "5015de281aec4e28ab5e0aec632231c382304580e6fffdda8a3caa8a2e4d1063",
+    "ImageSafetySharedSafetyRows.bin": "5ad50cdbd8e22908e7186f7eb6eb4d89907019503f848459e45635f06418bb93",
+    "ImageSafetyTinyCLIPVision-FP32.mlpackage/Data/com.apple.CoreML/model.mlmodel": "2fb388ca0c78c26276e77a6de21f8bc9ec56f13230887757066535ee022991f2",
+    "ImageSafetyTinyCLIPVision-FP32.mlpackage/Data/com.apple.CoreML/weights/weight.bin": "5ce4e50e6a454d1a0f948aa96cdd50659dda9877ac55c0e234e7b9cd7058d031",
+    "ImageSafetyTinyCLIPVision-FP32.mlpackage/Manifest.json": "ead38bac47a1ecc3149d73155fc2cd1b0c918bdbf2f77b5d791e2f41c16bad24",
+    "ImageSafetyUpperBodySemantic.bin": "05db2af05ba1fa906040dd5b8adbebceab21a1c9c6c31bc670bdc19e7ee49633",
+    "LICENSE": "5d2a0d79ae85c387c17a73898195b6cf470672ccfc39e1d947678466952c9c3d",
+    "THIRD_PARTY_NOTICES.md": "8221a5ea1a78bd85e8982a48b9542f1cdd5588d213113f68fddc9326aeeeff07",
+    "licenses/DINOv2-APACHE-2.0.txt": "600cc67cc4cb2f5ea317dcfc687ad1c74dc4bec8782bbe9db0afd83513b935b7",
+    "licenses/SafetyXS-MODEL-CARD.md": "9431e45d9686f183314d7def219b735f878c438231c7c6c579f40969e096a277",
+    "licenses/TinyCLIP-MIT.txt": "583acc0d9c74def18ec24e56964421bf1fac1fa2d60451e75e6681d5ae58a3f6"
+  },
+  "version": "v1.0.0"
+}
